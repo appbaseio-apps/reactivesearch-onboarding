@@ -50,15 +50,24 @@ body {
 			text-align: left;
 			padding: 0 40px;
 			font-size: 12px;
+
 			.well {
 				padding: 5px;
+				background: #fff;
+				box-shadow: none;
+				color: #555;
+				border-radius: 7px;
+				border-bottom: 4px solid #ccc;
 			}
+
 			table {
 				border: 0;
+
 				tr {
 					th {
 						padding: 5px;
 					}
+
 					td {
 						padding: 5px;
 						user-select: all;
@@ -81,6 +90,7 @@ body {
 		overflow-y: scroll;
 		padding: 0;
 		background-color: $primary-color;
+
 		.logout-link {
 			font-size: 12px;
 			position: absolute;
@@ -112,9 +122,9 @@ body {
 		letter-spacing: 0.02em;
 	}
 
-		strong {
-			font-weight: 900;
-		}
+	strong {
+		font-weight: 900;
+	}
 
 	.input-field {
 		position: relative;
@@ -294,33 +304,32 @@ body {
 		}
 	}
 
-	#upate-mapping {
-		.submit-btn {
-
-		}
-	}
-
 	#index-data {
 		table {
 			text-align: left;
+
 			input {
 				text-align: left;
 			}
+
 			.place-info-inputbox {
 				padding-left: 18px;
 				position: relative;
 				border-bottom: 1px dotted #ddd;
+
 				input {
 					width: 100%;
 					position: relative;
 					padding: 0 4px;
 				}
+
 				.input-prefix {
 					position: absolute;
 					left: 5px;
 					top: 12px;
 				}
 			}
+
 			.jsonPopoverBtn {
 				background: transparent;
 				border: 2px solid $primary-color;
@@ -328,6 +337,7 @@ body {
 				width: 30px;
 				height: 30px;
 				font-size: 12px;
+
 				&:before {
 					content: "{...}";
 				}
@@ -341,7 +351,7 @@ body {
 	margin: 0;
 	list-style: none;
 	padding: 60px 40px !important;
-	color: $link-color;
+	color: #bbb;
 	font-size: 18px;
 	line-height: 46px;
 	text-align: left;
@@ -368,7 +378,7 @@ body {
 			width: 20px;
 			height: 20px;
 			border-radius: 50%;
-			background-color: $link-color;
+			background-color: #bbb;
 			color: $secondary-color;
 			display: inline-block;
 			position: relative;
@@ -382,11 +392,10 @@ body {
 
 	li.active {
 		font-weight: bold;
-		color: #fff;
+		color: $link-color;
 
 		.circle {
-			background-color: #fff;
-			color: #999;
+			background-color: $link-color;
 		}
 	}
 
@@ -512,6 +521,7 @@ body {
 			height: calc(100%- 60px);
 			top: 60px;
 			left: 0;
+
 			.ReactCodeMirror {
 				height: calc(100% - 60px);
 			}
@@ -680,14 +690,17 @@ body {
 	position: absolute;
 	left: -25px;
 	top: 15px;
+
 	&.inlogin {
 		left: 0;
 		top: 0;
 		padding: 0;
+
 		img {
 			width: 60px;
 		}
 	}
+
 	img {
 		width: 30px;
 	}
