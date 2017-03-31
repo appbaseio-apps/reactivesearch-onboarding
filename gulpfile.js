@@ -15,7 +15,7 @@ var files = {
 			'node_modules/codemirror/lib/codemirror.css',
 			'node_modules/codemirror/addon/fold/foldgutter.css',
 			'node_modules/codemirror/addon/dialog/dialog.css',
-			'node_modules/@appbaseio/reactivemaps/dist/css/style.min.css'
+			'node_modules/@appbaseio/reactivesearch/dist/css/style.min.css'
 		],
 		custom: ['assets/css/*.css'],
 		sassFile: ['assets/styles/*.scss']
@@ -28,8 +28,7 @@ var files = {
 			'bower_components/crypto-js/crypto-js.js',
 			'bower_components/lzma/src/lzma.js',
 			'bower_components/urlsafe-base64/app.js',
-			'bower_components/appbase-js/browser/appbase.min.js',
-			'node_modules/reactive-maps/dist/js/vendor.min.js'
+			'bower_components/appbase-js/browser/appbase.min.js'
 		],
 		custom: [
 		]
@@ -70,7 +69,7 @@ gulp.task('moveFonts', function() {
 	return gulp.src(['bower_components/bootstrap/dist/fonts/*',
 		'bower_components/font-awesome/fonts/*',
 		'bower_components/materialze/fonts/*',
-		'node_modules/reactive-maps/dist/fonts/**/*'
+		'node_modules/@appbaseio/reactivesearch/dist/fonts/**/*'
 		])
 		.pipe(gulp.dest('dist/fonts'));
 });
