@@ -17,6 +17,7 @@ export class AppCreation extends Component {
 		this.createUrl = this.createUrl.bind(this);
 		this.showError = this.showError.bind(this);
 	}
+
 	componentDidMount() {
 		if (dataOperation.app && dataOperation.app.appName) {
 			this.setState({
@@ -26,6 +27,7 @@ export class AppCreation extends Component {
 			dataOperation.createUrl(this.createUrl);
 		}
 	}
+
 	appNameChange(event) {
 		let inputVal = event.target.value;
 		var patt = /^[a-zA-Z0-9_+-@$\.]+$/;
@@ -38,6 +40,7 @@ export class AppCreation extends Component {
 			error: !patt.test(inputVal)
 		});
 	}
+
 	submit() {
 		if (this.state.appName.trim() != "") {
 			if (dataOperation.user && dataOperation.user.apps && !dataOperation.user.apps.hasOwnProperty(this.state.appName)) {
@@ -55,6 +58,7 @@ export class AppCreation extends Component {
 			});
 		}
 	}
+
 	createApp() {
 		dataOperation.createApp(this.state.appName).done((res) => {
 			if (res.message === "App Created") {
@@ -62,9 +66,19 @@ export class AppCreation extends Component {
 					readOnly: true
 				});
 				res.body.appName = this.state.appName;
-				dataOperation.updateApp(res.body);
-				dataOperation.createUrl(this.createUrl);
-				this.props.nextStep();
+				$.get('https://accapi.appbase.io/app/' + res.body.id + '/permissions')
+				.done((data) => {
+					const creds = data.body.filter(item => item.write && item.read);
+					const app = {
+						username: creds[0].username,
+						password: creds[0].password,
+						appName: res.body.appName,
+						id: res.body.id
+					}
+					dataOperation.updateApp(app);
+					dataOperation.createUrl(this.createUrl);
+					this.props.nextStep();
+				});
 			} else {
 				this.errorMsg = "Some error occured. Please try again!";
 				this.setState({
@@ -82,11 +96,13 @@ export class AppCreation extends Component {
 			});
 		});
 	}
+
 	createUrl(url) {
 		this.setState({
 			url: url
 		});
 	}
+
 	showError() {
 		return (
 			<div className="error-box">
@@ -94,6 +110,7 @@ export class AppCreation extends Component {
 			</div>
 		)
 	}
+
 	submitBtn() {
 		let btn;
 		if (this.state.readOnly) {
@@ -117,6 +134,7 @@ export class AppCreation extends Component {
 		}
 		return btn;
 	}
+
 	render() {
 		let readOnly = {
 			readOnly: this.state.readOnly
@@ -133,11 +151,6 @@ export class AppCreation extends Component {
 			<div className="row">
 				<div className="input-field">
 					<label {...readOnly}>
-						<div className="pulse-holder">
-							<div className="pulse-marker">
-								<div className="pulse-rays"></div>
-							</div>
-						</div>
 						<span>Enter app name</span>
 						<input type="text"
 							className="form-control"

@@ -13,7 +13,7 @@ export class LoginScreen extends Component {
 			<div>
 				<div className="left">
 					<div className="tex-left img-container reactive-logo inlogin">
-						<img src="assets/images/logo-blue.png" alt="Reactive Maps" className="img-responsive" />
+						<img src="assets/images/logo.png" alt="Reactive Maps" className="img-responsive" />
 					</div>
 				</div>
 				<div className="on-right">

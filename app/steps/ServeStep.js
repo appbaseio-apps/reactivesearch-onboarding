@@ -1,7 +1,7 @@
 import { default as React, Component } from "react";
 import { AppCreation } from "./AppCreation";
-import { UpdateMapping } from "./UpdateMapping";
-import { IndexData } from "./IndexData";
+import SampleDataContainer from "./SampleDataContainer";
+import DemoComponents from "./DemoComponents";
 import { LiveFiddle } from "./LiveFiddle";
 
 export class ServeStep extends Component {
@@ -15,10 +15,10 @@ export class ServeStep extends Component {
 				return (<AppCreation {...this.props}></AppCreation>);
 			break;
 			case 1:
-				return (<UpdateMapping {...this.props}></UpdateMapping>);
+				return (<SampleDataContainer {...this.props}></SampleDataContainer>);
 			break;
 			case 2:
-				return (<IndexData {...this.props}></IndexData>);
+				return (<DemoComponents {...this.props}></DemoComponents>);
 			break;
 			case 3:
 				return (<LiveFiddle {...this.props}></LiveFiddle>);

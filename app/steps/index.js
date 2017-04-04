@@ -15,6 +15,7 @@ export class Steps extends Component {
 		};
 		this.nextStep = this.nextStep.bind(this);
 	}
+
 	setStep(step) {
 		if (this.state.completedStep + 1 >= step) {
 			this.setState({
@@ -22,17 +23,20 @@ export class Steps extends Component {
 			});
 		}
 	}
+
 	nextStep() {
 		this.setState({
 			currentStep: this.state.currentStep + 1,
 			completedStep: this.state.completedStep + 1
 		});
 	}
+
 	skipTutorial() {
 		this.setState({
 			currentStep: 3
 		});
 	}
+
 	stepRender() {
 		if (this.state.currentStep == 3) {
 			let snippet = dataOperation.appSnippet();
@@ -52,6 +56,7 @@ export class Steps extends Component {
 			</ServeStep>
 		);
 	}
+
 	renderComponent(method) {
 		let element;
 		switch (method) {
@@ -101,13 +106,14 @@ export class Steps extends Component {
 		}
 		return element;
 	}
+
 	render() {
 		return (
 			<div>
 				<div className="onboarding-left">
 					<div className="tex-left img-container reactive-logo">
 						<a href="https://opensource.appbase.io/reactivesearch/">
-							<img src="assets/images/reactive-logo.png" alt="Reactive Maps" className="img-responsive" />
+							<img src="assets/images/logo.png" alt="Reactive Maps" className="img-responsive" />
 						</a>
 					</div>
 					<ul className="step-widget">
@@ -127,21 +133,21 @@ export class Steps extends Component {
 								<i className="fa fa-check-circle"></i>
 								<span className="circle">2</span>
 							</span>
-							Define data model
+							Add data
 						</li>
 						<li onClick={this.setStep.bind(this, 2)} className={(this.state.currentStep == 2 ? "active" : this.state.completedStep >= 2 ? "finished" : null)}>
 							<span className="icon">
 								<i className="fa fa-check-circle"></i>
 								<span className="circle">3</span>
 							</span>
-							Index data
+							Know your Components
 						</li>
 						<li onClick={this.setStep.bind(this, 3)} className={(this.state.currentStep == 3 ? "active" : this.state.completedStep >= 3 ? "finished" : null)}>
 							<span className="icon">
 								<i className="fa fa-check-circle"></i>
 								<span className="circle">4</span>
 							</span>
-							See the Maps UI
+							Get your app ready
 						</li>
 					</ul>
 					{this.renderComponent("credentials")}
