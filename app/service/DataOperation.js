@@ -147,8 +147,7 @@ class DataOperation {
 		let app = this.app ? this.app : this.defaultApp;
 		return {
 			"app": app.appName,
-			"username": app.username,
-			"password": app.password,
+			"credentials": `${app.username}:${app.password}`,
 			"type": app.type
 		};
 	}
@@ -162,15 +161,14 @@ class DataOperation {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="shortcut icon" href="assets/images/favicon.ico" />
-	<title>Reactive maps sample</title>
+	<title>Reactive Search Sample</title>
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" />
 	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/appbaseio/reactivesearch/master/dist/css/style.min.css" />
 	<!-- JavaScript -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
-	<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyC-v0oz7Pay_ltypZbKasABXGiY9NlpCIY&libraries=places"></script>
-	<script type="text/javascript" src="https://cdn.rawgit.com/appbaseio/reactivesearch/master/umd/reactivesearch.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/appbaseio/reactivesearch/master/umd/ReactiveSearch.js"></script>
 </head>
 <body>
 	<div id="root"></div>
@@ -187,11 +185,9 @@ class DataOperation {
 		let resources = [
 			'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js',
 			'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js',
-			'https://maps.google.com/maps/api/js?key=AIzaSyC-v0oz7Pay_ltypZbKasABXGiY9NlpCIY&libraries=places',
-			'https://cdn.rawgit.com/appbaseio/reactivesearch/master/umd/reactivesearch.js',
-			'https://rawgit.com/appbaseio/reactivesearch/umd-test/dist/css/style.min.css',
-			'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
-			'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css'
+			'https://cdn.rawgit.com/appbaseio/reactivesearch/master/umd/ReactiveSearch.js',
+			'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css',
+			'https://rawgit.com/appbaseio/reactivesearch/master/dist/css/style.min.css',
 		];
 		return resources.join(',');
 	}

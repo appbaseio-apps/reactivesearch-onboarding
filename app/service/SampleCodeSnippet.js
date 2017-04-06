@@ -1,43 +1,67 @@
 export const sampleCodeSnippet = `const {
 	ReactiveBase,
-	SingleList,
-	MultiList,
-	ReactiveMap } = ReactiveMaps;
+	TextField,
+	SingleDropdownList,
+	ResultList } = reactivesearch;
 
 const Testing = React.createClass({
-	onPopoverTrigger: function(marker) {
-		return (
-			<div>
-				{marker._source.place_info}
-			</div>
-		);
+	newsQuery(value) {
+		if(value) {
+			return {
+				multi_match: {
+					query: value,
+					fields: ["title", "text", "by"]
+				}
+			};
+		} else {
+			return null;
+		}
 	},
 	render: function () {
 		return (
 			<div className="container-fluid h-100 liveExample">
 				<ReactiveBase
 					app={{app}}
-					username={{username}}
-					password={{password}} >
-					<div className="row">
-						<div className="col s4 col-xs-4 col-sm-4 appbaseListCol">
-							<SingleList
-								componentId="CitySensor"
-								appbaseField="city"
-								title="Cities"
-								defaultSelected="sanfrancisco"
-								showSearch={true}
+					credentials={{credentials}}
+					type="post"
+					theme="rbc-orange"
+				>
+					<nav className="wrapper">
+						Hacker News
+					</nav>
+					<div className="filters wrapper row">
+						<div className="col s9">
+							<TextField
+								componentId="InputSensor"
+								appbaseField="title"
+								placeholder="Search posts by title, text or author..."
+								customQuery={this.newsQuery}
 							/>
 						</div>
-						<div className="col s8 col-xs-8 col-sm-8 h-100" style={{height: '1000px'}}>
-							<ReactiveMap
-								appbaseField="location"
-								showPopoverOn="click"
-								onPopoverTrigger={this.onPopoverTrigger}
-								actuate={{
-								  CitySensor: {"operation": "must"}
+
+						<div className="col s3">
+							<SingleDropdownList
+								componentId="TypeSensor"
+								appbaseField="p_type.raw"
+								size={100}
+								selectAllLabel="All"
+								defaultSelected="All"
+							/>
+						</div>
+					</div>
+
+					<div className="wrapper row">
+						<div className="col s12">
+							<ResultList
+								appbaseField="title"
+								from={0}
+								size={50}
+								showPagination={true}
+								react={{
+									and: ["InputSensor", "TypeSensor"]
 								}}
 							/>
+
 						</div>
 					</div>
 				</ReactiveBase>

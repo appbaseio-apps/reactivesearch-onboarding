@@ -8,8 +8,8 @@ var rename = require("gulp-rename");
 var files = {
 	css: {
 		vendor: [
-			'bower_components/materialize/dist/css/materialize.min.css',
 			'bower_components/bootstrap/dist/css/bootstrap.min.css',
+			'bower_components/materialize/dist/css/materialize.min.css',
 			'bower_components/font-awesome/css/font-awesome.min.css',
 			'assets/vendor/hljs.css',
 			'node_modules/codemirror/lib/codemirror.css',

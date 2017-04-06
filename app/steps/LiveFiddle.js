@@ -1,5 +1,6 @@
 import { default as React, Component } from "react";
 import { dataOperation } from "../service/DataOperation";
+import { SampleCSS } from "../service/SampleCSS";
 import { JsonView } from "../others/JsonView";
 import { Tabs, Tab } from "react-bootstrap";
 import {LiveExample} from "./LiveExample";
@@ -16,17 +17,18 @@ export class LiveFiddle extends Component {
 
 	codepenConfig() {
 		let config = {
-			title                 : "Reactivemaps App",
+			title                 : "Reactivesearch App",
 			description           : "Powered by appbase.io",
 			private               : false,
 			editors               : "101",
 			layout                : "left",
 			html                  : "<div id='root'></div>",
+			css                   : SampleCSS,
 			js                    : dataOperation.appSnippet(),
 			js_pre_processor      : "babel",
 			head                  : "<meta name='viewport' content='width=device-width'>",
-			css_external          : "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css;https://cdn.rawgit.com/appbaseio/reactivemaps/master/dist/css/style.min.css",
-			js_external           : "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js;https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js;https://maps.google.com/maps/api/js?key=AIzaSyC-v0oz7Pay_ltypZbKasABXGiY9NlpCIY&libraries=places;https://cdn.rawgit.com/appbaseio/reactivemaps/master/umd/ReactiveMaps.js"
+			css_external          : "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css;https://cdn.rawgit.com/appbaseio/reactivesearch/master/dist/css/style.min.css",
+			js_external           : "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js;https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js;https://cdn.rawgit.com/appbaseio/reactivesearch/master/umd/ReactiveSearch.js"
 
 		};
 		return JSON.stringify(config);
@@ -41,6 +43,9 @@ export class LiveFiddle extends Component {
 				if(this.state.key === 3) {
 					this.setState({showHtml: true});
 				}
+				if(this.state.key === 4) {
+					this.setState({showCSS: true});
+				}
 			}, 400);
 		});
 	}
@@ -50,14 +55,18 @@ export class LiveFiddle extends Component {
 		switch(method) {
 			case "js":
 				if(this.state.showJs) {
-					element = (<JsonView content = {dataOperation.appSnippet()}></JsonView>);
+					element = (<JsonView content={dataOperation.appSnippet()} />);
 				}
 			break;
 			case "html":
 				if(this.state.showHtml) {
-					element = (<JsonView content = {dataOperation.htmlSnippet("full")} />);
+					element = (<JsonView content={dataOperation.htmlSnippet("full")} />);
 				}
 			break;
+			case "css":
+				if(this.state.showCSS) {
+					element = (<JsonView content={SampleCSS} />);
+				}
 		}
 		return element;
 	}
@@ -74,6 +83,9 @@ export class LiveFiddle extends Component {
 					</Tab>
 					<Tab eventKey={3} title="HTML">
 						{this.renderComponent("html")}
+					</Tab>
+					<Tab eventKey={4} title="CSS">
+						{this.renderComponent("css")}
 					</Tab>
 				</Tabs>
 				<div className="extra-btns">
