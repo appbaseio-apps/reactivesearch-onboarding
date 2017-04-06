@@ -27,11 +27,10 @@ export default class DemoComponents extends Component {
 	submit() {
 		dataOperation.indexData(data)
 		.on('data', (res) => {
-			console.log("successful bulk: ", res);
 			this.props.nextStep();
 		})
 		.on('error', (err) => {
-			console.log("bulk failed: ", err);
+			console.error("bulk failed: ", err);
 		});
 	}
 
