@@ -2,7 +2,7 @@ export const sampleCodeSnippet = `const {
 	ReactiveBase,
 	DataSearch,
 	SingleDropdownList,
-	ResultList } = reactivesearch;
+	ResultList } = ReactiveSearch;
 
 const Testing = React.createClass({
 	render: function () {

@@ -11,9 +11,9 @@
   },
   "author": "Deepak Grover",
   "dependencies": {
-    "@appbaseio/reactivesearch": "0.3.0",
     "@appbaseio/reactivebase": "1.0.0-alpha13",
-    "@appbaseio/reactivemaps": "1.0.0-alpha7",
+    "@appbaseio/reactivemaps": "^1.0.0-alpha8",
+    "@appbaseio/reactivesearch": "0.3.0",
     "babel-preset-stage-0": "^6.5.0",
     "clipboard": "^1.6.0",
     "fbemitter": "^2.1.1",
