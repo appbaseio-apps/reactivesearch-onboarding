@@ -23,6 +23,15 @@ const SingleDropdownList = `
 	/>
 `;
 
+const DataSearch = `
+	<DataSearch
+		componentId="InputSensor"
+		appbaseField={["title", "text", "by"]}
+		placeholder="Search posts by title, text or author..."
+		autocomplete={false}
+	/>
+`;
+
 export default class DemoComponents extends Component {
 	submit() {
 		dataOperation.indexData(data)
@@ -72,6 +81,17 @@ export default class DemoComponents extends Component {
 							<Remarkable source={SingleDropdownList}></Remarkable>
 						</div>
 						<div className="right-col">
+							<img src="/assets/images/component-1.png" />
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis laborum velit consequatur beatae, eligendi soluta cupiditate, quam nihil? Aspernatur, totam.</p>
+						</div>
+					</div>
+
+					<div className="row">
+						<div className="left-col">
+							<Remarkable source={DataSearch}></Remarkable>
+						</div>
+						<div className="right-col">
+							<img src="/assets/images/component-2.png" />
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis laborum velit consequatur beatae, eligendi soluta cupiditate, quam nihil? Aspernatur, totam.</p>
 						</div>
 					</div>

@@ -723,15 +723,26 @@ table.highlight {
 
 	.row {
 		display: flex;
+		margin: 40px 0 80px;
 	}
 
 	.left-col, .right-col {
 		width: 48%;
 	}
 
-	.right-col p {
-		padding: 12px;
-		font-size: 14px;
-		line-height: 24px;
+	.right-col {
+		text-align: center;
+
+		p {
+			padding: 6px 12px;
+			font-size: 14px;
+			line-height: 24px;
+		}
+
+		img {
+			width: 100%;
+			max-width: 280px;
+			margin: 0 auto;
+		}
 	}
 }

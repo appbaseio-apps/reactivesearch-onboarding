@@ -12,7 +12,7 @@
   "author": "Deepak Grover",
   "dependencies": {
     "@appbaseio/reactivebase": "1.0.0-alpha13",
-    "@appbaseio/reactivemaps": "^1.0.0-alpha8",
+    "@appbaseio/reactivemaps": "^1.0.0-alpha9",
     "@appbaseio/reactivesearch": "0.3.0",
     "babel-preset-stage-0": "^6.5.0",
     "clipboard": "^1.6.0",
