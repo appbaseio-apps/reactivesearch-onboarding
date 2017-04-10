@@ -1,22 +1,10 @@
 export const sampleCodeSnippet = `const {
 	ReactiveBase,
-	TextField,
+	DataSearch,
 	SingleDropdownList,
 	ResultList } = reactivesearch;
 
 const Testing = React.createClass({
-	newsQuery(value) {
-		if(value) {
-			return {
-				multi_match: {
-					query: value,
-					fields: ["title", "text", "by"]
-				}
-			};
-		} else {
-			return null;
-		}
-	},
 	render: function () {
 		return (
 			<div className="container-fluid h-100 liveExample">
@@ -31,11 +19,11 @@ const Testing = React.createClass({
 					</nav>
 					<div className="filters wrapper row">
 						<div className="col s9">
-							<TextField
+							<DataSearch
 								componentId="InputSensor"
-								appbaseField="title"
+								appbaseField={["title", "text", "by"]}
 								placeholder="Search posts by title, text or author..."
-								customQuery={this.newsQuery}
+								autocomplete={false}
 							/>
 						</div>
 
@@ -46,6 +34,9 @@ const Testing = React.createClass({
 								size={100}
 								selectAllLabel="All"
 								defaultSelected="All"
+								react={{
+									and: ["InputSensor"]
+								}}
 							/>
 						</div>
 					</div>

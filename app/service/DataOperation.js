@@ -71,43 +71,6 @@ class DataOperation {
 		});
 	}
 
-	closeIndex() {
-		let credentials = this.app.username + ':' + this.app.password;
-		return $.ajax({
-			type: "POST",
-			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_close/',
-			headers: {
-				'Authorization': 'Basic ' + btoa(credentials)
-			}
-		});
-	}
-
-	openIndex() {
-		let credentials = this.app.username + ':' + this.app.password;
-		return $.ajax({
-			type: "POST",
-			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_open/',
-			headers: {
-				'Authorization': 'Basic ' + btoa(credentials)
-			}
-		});
-	}
-
-	updateSettings(type, settingsObj) {
-		let credentials = this.app.username + ':' + this.app.password;
-		this.app.type = type;
-		return $.ajax({
-			type: "PUT",
-			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_settings/',
-			dataType: 'json',
-			contentType: "application/json",
-			headers: {
-				'Authorization': 'Basic ' + btoa(credentials)
-			},
-			data: JSON.stringify(settingsObj)
-		});
-	}
-
 	indexData(data) {
 		let credentials = this.app.username + ':' + this.app.password;
 		let finalData = [];
