@@ -7,10 +7,10 @@ class DataOperation {
 		this.user = null;
 		this.app = null;
 		this.defaultApp = {
-			"appName": "testr1",
-			"username": "mnFcuMCIG",
-			"password": "49e6e356-adff-45b0-b5d0-5f4836d277b1",
-			"type": "test"
+			"appName": "hn",
+			"username": "YOzeIAmyn",
+			"password": "f1955c6b-03e7-4eb8-90ca-bfcc28a0ba0c",
+			"type": "post"
 		}
 		$.ajaxSetup({
 			crossDomain: true,

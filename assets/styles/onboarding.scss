@@ -1,5 +1,8 @@
 @import "variables.scss";
 
+$slideup-color: #6065FF;
+$slideup-hover-color: #4145d4;
+
 body {
 	background-color: $primary-color;
 }
@@ -743,6 +746,90 @@ table.highlight {
 			width: 100%;
 			max-width: 280px;
 			margin: 0 auto;
+		}
+	}
+}
+
+.slideup {
+	width: 100%;
+	padding: 50px;
+	position: fixed;
+	bottom: -350px;
+	height: 350px;
+	background-color: $slideup-color;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+
+	.item {
+		max-width: 290px;
+		border: 2px solid #fff;
+		border-radius: 8px;
+		margin: 0 20px;
+		padding: 20px;
+		-webkit-transition: all .3s ease;
+		transition: all .3s ease;
+
+		h2 {
+			font-size: 18px;
+			color: #fff;
+			font-weight: bold;
+		}
+
+		img {
+			width: 100px;
+		}
+
+		p {
+			color: #eee;
+		}
+
+		&:hover {
+			background-color: $slideup-hover-color;
+		}
+	}
+
+	.toggle-btn {
+		background-color: $slideup-color;
+		color: #fff;
+		position: absolute;
+		top: -40px;
+		width: 60px;
+		height: 40px;
+		padding: 14px;
+		left: 170px;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		-webkit-transition: all .3s ease;
+		transition: all .3s ease;
+
+		&:hover {
+			background-color: $slideup-hover-color;
+		}
+	}
+
+	.toggle-btn .fa-chevron-down {
+		display: none;
+	}
+
+	.toggle-btn .fa-chevron-up {
+		display: block;
+	}
+
+	&.slideup-active {
+		bottom: 0;
+
+		.toggle-btn .fa-chevron-down {
+			display: block;
+		}
+
+		.toggle-btn .fa-chevron-up {
+			display: none;
 		}
 	}
 }
