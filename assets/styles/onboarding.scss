@@ -32,7 +32,7 @@ body {
 			letter-spacing: 0.01em;
 			background-color: $secondary-color;
 			font-weight: bold;
-			color: #ddd;
+			color: $primary-font-color;
 			font-size: 17px;
 			display: block;
 			text-decoration: none;
@@ -208,8 +208,8 @@ body {
 
 			&:hover, &:focus {
 				outline: none;
-				color: #666;
-				background-color: $link-color;
+				color: #fff;
+				background-color: $primary-font-color;
 			}
 
 			&.pos-static {
@@ -250,7 +250,7 @@ body {
 					margin-right: 12px;
 					border: 0;
 					border-radius: 4px;
-					color: #fff;
+					color: $primary-color;
 					padding: 9px 24px;
 					letter-spacing: 0.04em;
 					border-bottom: 2px solid #fafafa;
@@ -368,7 +368,7 @@ body {
 		font-weight: bold;
 		text-transform: uppercase;
 		font-size: 15px;
-		color: #eee;
+		color: $grey-font;
 		margin-bottom: 20px;
 	}
 
@@ -382,7 +382,7 @@ body {
 			width: 20px;
 			height: 20px;
 			border-radius: 50%;
-			background-color: #bbb;
+			background-color: $light-grey-color;
 			color: $secondary-color;
 			display: inline-block;
 			position: relative;
@@ -396,15 +396,15 @@ body {
 
 	li.active {
 		font-weight: bold;
-		color: $link-color;
+		color: $primary-font-color;
 
 		.circle {
-			background-color: $link-color;
+			background-color: $primary-font-color;
 		}
 	}
 
 	li.finished {
-		color: #fff;
+		color: #5B5B5B;
 
 		.circle {
 			display: none;
@@ -414,7 +414,7 @@ body {
 			font-size: 22px;
 			top: 2px;
 			position: relative;
-			color: #CDDC39;
+			color: #5B5B5B;
 			display: inline-block;
 		}
 	}
