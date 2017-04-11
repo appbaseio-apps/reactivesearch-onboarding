@@ -61,33 +61,32 @@ export class AppCreation extends Component {
 
 	createApp() {
 		dataOperation.createApp(this.state.appName).done((res) => {
-			if (res.message === "App Created") {
-				this.setState({
-					readOnly: true
-				});
-				res.body.appName = this.state.appName;
-				$.get('https://accapi.appbase.io/app/' + res.body.id + '/permissions')
-				.done((data) => {
-					const creds = data.body.filter(item => item.write && item.read);
-					const app = {
-						username: creds[0].username,
-						password: creds[0].password,
-						appName: res.body.appName,
-						id: res.body.id
-					}
-					dataOperation.updateApp(app);
+			if (res.message === 'App Created') {
+				dataOperation.getPermission(res.body.id).then((permission) => {
+					this.setState({
+						readOnly: true
+					});
+					res.body.appName = this.state.appName;
+					res.body = Object.assign(res.body, permission);
+					dataOperation.updateApp(res.body);
 					dataOperation.createUrl(this.createUrl);
 					this.props.nextStep();
+				}).catch((e) => {
+					console.log(e);
+					this.errorMsg = 'Some error occured. Please try again!';
+					this.setState({
+						error: true
+					});
 				});
 			} else {
-				this.errorMsg = "Some error occured. Please try again!";
+				this.errorMsg = 'Some error occured. Please try again!';
 				this.setState({
 					error: true
 				});
 			}
 		}).fail((res) => {
-			if(res && res.responseJSON && res.responseJSON.Message && res.responseJSON.Message.indexOf("UNIQUE KEY") > 0) {
-				this.errorMsg = "An app with the same name already exists!";
+			if(res && res.responseJSON && res.responseJSON.Message && res.responseJSON.Message.indexOf('UNIQUE KEY') > 0) {
+				this.errorMsg = 'An app with the same name already exists!';
 			} else {
 				this.errorMsg = res.responseText;
 			}
