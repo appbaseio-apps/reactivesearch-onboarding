@@ -7,7 +7,7 @@
     "webpack-server": "webpack-dev-server --hot --inline --progress --colors --port 8000",
     "web-server": "http-server -p 3000 .",
     "start": "concurrently \"npm run webpack-server\" \"gulp watch\"",
-    "build": "set NODE_ENV=production&& webpack -p && gulp"
+    "build": "set NODE_ENV=production && webpack -p --progress && gulp"
   },
   "author": "Deepak Grover",
   "dependencies": {
