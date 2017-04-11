@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { dataOperation } from "../service/DataOperation";
 import {
 	ReactiveBase,
-	TextField,
+	DataSearch,
 	SingleDropdownList,
 	ResultList
 } from "@appbaseio/reactivesearch";
@@ -11,25 +11,6 @@ import moment from "moment";
 require("./news.scss");
 
 export class LiveExample extends Component {
-	constructor(props) {
-		super(props);
-		this.newsQuery = this.newsQuery.bind(this);
-		this.onData = this.onData.bind(this);
-	}
-
-	newsQuery(value) {
-		if(value) {
-			return {
-				multi_match: {
-					query: value,
-					fields: ["title", "text", "by"]
-				}
-			};
-		} else {
-			return null;
-		}
-	}
-
 	onData(res) {
 		const title = res.title && res.title.length ?
 			res.url ?
@@ -69,8 +50,8 @@ export class LiveExample extends Component {
 		return (
 			<div>
 				<ReactiveBase
-					app="hacker-news"
-					credentials="Nt7ZtBrAn:5656435e-0273-497e-a741-9a5a2085ae84"
+					app="hn"
+					credentials="YOzeIAmyn:f1955c6b-03e7-4eb8-90ca-bfcc28a0ba0c"
 					type="post"
 					theme="rbc-orange"
 				>
@@ -79,20 +60,24 @@ export class LiveExample extends Component {
 					</nav>
 					<div className="filters wrapper row">
 						<div className="col s9">
-							<TextField
+							<DataSearch
 								componentId="InputSensor"
+								appbaseField={["title", "text", "by"]}
 								placeholder="Search posts by title, text or author..."
-								customQuery={this.newsQuery}
+								autocomplete={false}
 							/>
 						</div>
 
 						<div className="col s3">
 							<SingleDropdownList
 								componentId="TypeSensor"
-								appbaseField={this.props.mapping.type}
+								appbaseField="p_type.raw"
 								size={100}
 								selectAllLabel="All"
 								defaultSelected="All"
+								react={{
+									and: ["InputSensor"]
+								}}
 							/>
 						</div>
 					</div>

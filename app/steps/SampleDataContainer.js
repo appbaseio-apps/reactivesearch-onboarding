@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import data from "../service/sampleData";
 import { dataOperation } from '../service/DataOperation';
-import { settings } from "../service/analyzerSettings";
 import { mapping } from "../service/mappingObj";
 
 export default class SampleDataContainer extends Component {
@@ -20,10 +19,7 @@ export default class SampleDataContainer extends Component {
 	}
 
 	submit() {
-		dataOperation.closeIndex()
-		.then(() => dataOperation.updateSettings("post", settings))
-		.then(() => dataOperation.openIndex())
-		.then(() => dataOperation.updateMapping("post", mapping))
+		dataOperation.updateMapping("post", mapping)
 		.then((res) => {
 			this.props.nextStep();
 		})

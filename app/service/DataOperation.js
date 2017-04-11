@@ -7,10 +7,10 @@ class DataOperation {
 		this.user = null;
 		this.app = null;
 		this.defaultApp = {
-			"appName": "testr1",
-			"username": "mnFcuMCIG",
-			"password": "49e6e356-adff-45b0-b5d0-5f4836d277b1",
-			"type": "test"
+			"appName": "hn",
+			"username": "YOzeIAmyn",
+			"password": "f1955c6b-03e7-4eb8-90ca-bfcc28a0ba0c",
+			"type": "post"
 		}
 		this.address = "https://accapi.appbase.io/";
 		$.ajaxSetup({
@@ -80,43 +80,6 @@ class DataOperation {
 				'Authorization': 'Basic ' + btoa(credentials)
 			},
 			data: JSON.stringify(mappingObj)
-		});
-	}
-
-	closeIndex() {
-		let credentials = this.app.username + ':' + this.app.password;
-		return $.ajax({
-			type: "POST",
-			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_close/',
-			headers: {
-				'Authorization': 'Basic ' + btoa(credentials)
-			}
-		});
-	}
-
-	openIndex() {
-		let credentials = this.app.username + ':' + this.app.password;
-		return $.ajax({
-			type: "POST",
-			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_open/',
-			headers: {
-				'Authorization': 'Basic ' + btoa(credentials)
-			}
-		});
-	}
-
-	updateSettings(type, settingsObj) {
-		let credentials = this.app.username + ':' + this.app.password;
-		this.app.type = type;
-		return $.ajax({
-			type: "PUT",
-			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_settings/',
-			dataType: 'json',
-			contentType: "application/json",
-			headers: {
-				'Authorization': 'Basic ' + btoa(credentials)
-			},
-			data: JSON.stringify(settingsObj)
 		});
 	}
 

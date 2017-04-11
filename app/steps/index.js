@@ -11,15 +11,33 @@ export class Steps extends Component {
 		super(props);
 		this.state = {
 			currentStep: 0,
-			completedStep: -1
+			completedStep: -1,
+			slideup: false,
+			slideVisible: false
 		};
 		this.nextStep = this.nextStep.bind(this);
+		this.toggleSlideup = this.toggleSlideup.bind(this);
+	}
+
+	componentDidUpdate() {
+		if (this.state.currentStep === 3 || this.state.completedStep === 3) {
+			if (!this.state.slideVisible) {
+				setTimeout(() => {
+					this.setState({
+						slideup: true,
+						slideVisible: true
+					});
+				}, 4500);
+			}
+		}
 	}
 
 	setStep(step) {
 		if (this.state.completedStep + 1 >= step) {
 			this.setState({
 				currentStep: step
+			}, () => {
+				document.querySelector(".onboarding-right").scrollTop = 0;
 			});
 		}
 	}
@@ -28,6 +46,8 @@ export class Steps extends Component {
 		this.setState({
 			currentStep: this.state.currentStep + 1,
 			completedStep: this.state.completedStep + 1
+		}, () => {
+			document.querySelector(".onboarding-right").scrollTop = 0;
 		});
 	}
 
@@ -55,6 +75,44 @@ export class Steps extends Component {
 				completedStep={this.state.completedStep}>
 			</ServeStep>
 		);
+	}
+
+	toggleSlideup() {
+		this.setState({
+			slideup: !this.state.slideup
+		});
+	}
+
+	renderSlideUp() {
+		let markup = null;
+		const cx = this.state.slideup ? "slideup-active" : "";
+
+		if (this.state.slideVisible || this.state.slideup) {
+			markup = (
+				<div className={`slideup ${cx}`}>
+					<a className="toggle-btn" onClick={this.toggleSlideup}>
+						<i className="fa fa-chevron-up"></i>
+						<i className="fa fa-chevron-down"></i>
+					</a>
+					<a className="item">
+						<img src="/assets/images/importer.svg" alt="Importer"/>
+						<h2>Import custom datasets</h2>
+						<p>Importer allows you to import custom datasets from .csv or .json files.</p>
+					</a>
+					<a className="item">
+						<img src="/assets/images/importer.svg" alt="Importer"/>
+						<h2>Import custom datasets</h2>
+						<p>Importer allows you to import custom datasets from .csv or .json files.</p>
+					</a>
+					<a className="item">
+						<img src="/assets/images/importer.svg" alt="Importer"/>
+						<h2>Import custom datasets</h2>
+						<p>Importer allows you to import custom datasets from .csv or .json files.</p>
+					</a>
+				</div>
+			);
+		}
+		return markup;
 	}
 
 	renderComponent(method) {
@@ -173,6 +231,7 @@ export class Steps extends Component {
 						{this.stepRender()}
 					</ReactCSSTransitionGroup>
 				</div>
+				{this.renderSlideUp()}
 			</div>
 		);
 	}

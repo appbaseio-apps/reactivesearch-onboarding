@@ -27,16 +27,14 @@ export const mapping = {
 			},
 			"text": {
 				"type": "string",
-				"analyzer": "auto-suggest",
-				"search_analyzer": "standard"
+				"analyzer": "english"
 			},
 			"time": {
 				"type": "integer"
 			},
 			"title": {
 				"type": "string",
-				"analyzer": "auto-suggest",
-				"search_analyzer": "standard"
+				"analyzer": "english"
 			},
 			"url": {
 				"type": "string"

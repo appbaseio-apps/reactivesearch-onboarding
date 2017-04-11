@@ -5,8 +5,8 @@ import { data } from "../service/indexData";
 
 const base = `
 	<ReactiveBase
-		app="hacker-news"
-		credentials="Nt7ZtBrAn:5656435e-0273-497e-a741-9a5a2085ae84"
+		app="hn"
+		credentials="YOzeIAmyn:f1955c6b-03e7-4eb8-90ca-bfcc28a0ba0c"
 		type="post"
 		theme="rbc-orange"
 	>
@@ -20,6 +20,15 @@ const SingleDropdownList = `
 		size={100}
 		selectAllLabel="All"
 		defaultSelected="All"
+	/>
+`;
+
+const DataSearch = `
+	<DataSearch
+		componentId="InputSensor"
+		appbaseField={["title", "text", "by"]}
+		placeholder="Search posts by title, text or author..."
+		autocomplete={false}
 	/>
 `;
 
@@ -72,6 +81,17 @@ export default class DemoComponents extends Component {
 							<Remarkable source={SingleDropdownList}></Remarkable>
 						</div>
 						<div className="right-col">
+							<img src="/assets/images/component-1.png" />
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis laborum velit consequatur beatae, eligendi soluta cupiditate, quam nihil? Aspernatur, totam.</p>
+						</div>
+					</div>
+
+					<div className="row">
+						<div className="left-col">
+							<Remarkable source={DataSearch}></Remarkable>
+						</div>
+						<div className="right-col">
+							<img src="/assets/images/component-2.png" />
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis laborum velit consequatur beatae, eligendi soluta cupiditate, quam nihil? Aspernatur, totam.</p>
 						</div>
 					</div>
