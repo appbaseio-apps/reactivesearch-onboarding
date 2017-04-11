@@ -25,7 +25,7 @@ class DataOperation {
 	getUser() {
 		return $.ajax({
 			type: "GET",
-			url: this.address+'user',,
+			url: this.address+'user',
 			dataType: 'json',
 			contentType: "application/json"
 		});
