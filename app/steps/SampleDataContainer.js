@@ -52,7 +52,7 @@ export default class SampleDataContainer extends Component {
 			<section className="single-step">
 				<h2>Sample Dataset for Hacker News</h2>
 				<p>
-					First things first, we will start by creating an appbase.io app. This is where all the data will reside once our <b>reactivesearch</b> app is up and running.
+					We have prepared a small sample of Hacker News dataset to be inserted into the app. Hit the <strong>Next</strong> button to index this data.
 				</p>
 				<table className="highlight responsive-table">
 					<thead>
