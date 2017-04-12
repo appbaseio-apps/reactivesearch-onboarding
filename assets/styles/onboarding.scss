@@ -790,12 +790,19 @@ table.highlight {
 			padding: 6px 12px;
 			font-size: 14px;
 			line-height: 24px;
+			text-align: justify;
+			max-width: 300px;
+			margin: 0 auto;
 		}
 
 		img {
 			width: 100%;
 			max-width: 280px;
-			margin: 0 auto;
+			margin: 0 auto 20px;
+
+			&.big {
+				max-width: 320px;
+			}
 		}
 	}
 }

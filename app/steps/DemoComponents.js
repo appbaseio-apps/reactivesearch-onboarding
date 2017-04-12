@@ -32,6 +32,19 @@ const DataSearch = `
 	/>
 `;
 
+const ResultList = `
+	<ResultList
+		appbaseField="title"
+		from={0}
+		size={20}
+		showPagination={true}
+		onData={this.onData}
+		react={{
+			and: ["InputSensor", "TypeSensor"]
+		}}
+	/>
+`;
+
 export default class DemoComponents extends Component {
 	submit() {
 		this.props.toggleLoader("Assembling data and components for your app. Hold tight!");
@@ -82,7 +95,7 @@ export default class DemoComponents extends Component {
 							<Remarkable source={SingleDropdownList}></Remarkable>
 						</div>
 						<div className="right-col">
-							<img src="/assets/images/component-1.png" />
+							<img src="https://i.imgur.com/kquzzEU.png" />
 							<p>A SingleDropdownList sensor component creates a radio select list UI widget. It is used for filtering results based on the current selection from a list of items.</p>
 						</div>
 					</div>
@@ -92,8 +105,18 @@ export default class DemoComponents extends Component {
 							<Remarkable source={DataSearch}></Remarkable>
 						</div>
 						<div className="right-col">
-							<img src="/assets/images/component-2.png" />
+							<img className="big" src="https://i.imgur.com/AxAJkte.png" />
 							<p>A DataSearch sensor component creates a searchbox UI widget with an autocomplete and keyword highlighting functionality. It is used for applying full-text search across one or more fields.</p>
+						</div>
+					</div>
+
+					<div className="row">
+						<div className="left-col">
+							<Remarkable source={ResultList}></Remarkable>
+						</div>
+						<div className="right-col">
+							<img className="big" src="https://i.imgur.com/l0wLoZ4.png" />
+							<p>A ResultList is an actuator component that creates a result list UI widget where results from all the applied filters are shown.</p>
 						</div>
 					</div>
 				</div>
