@@ -52,9 +52,9 @@
     react-select "^1.0.0-rc.3"
     react-tooltip "^3.1.8"
 
-"@appbaseio/reactivesearch@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-0.4.2.tgz#64c6d3ac076c865303a6bd92d2af6e7e2443f8ec"
+"@appbaseio/reactivesearch@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch/-/reactivesearch-0.4.3.tgz#01f14123008c976edd96c94a3b6b17e8f7137920"
   dependencies:
     "@appbaseio/reactivebase" "1.0.0-alpha17"
     "@appbaseio/reactivemaps" "1.0.0-alpha13"
