@@ -87,7 +87,9 @@ export default class DemoComponents extends Component {
 				<div className="docs-wrapper">
 					<div className="row">
 						<div className="left-col">
-							{renderHTML(ReactivebaseMarkup)}
+							<div className="code-div">
+								{renderHTML(ReactivebaseMarkup)}
+							</div>
 						</div>
 						<div className="right-col">
 							<p>ReactiveBase is the first component in any ReactiveSearch (or Maps) app, it connects the UI layer with the appbase.io data backend.</p>
@@ -96,7 +98,9 @@ export default class DemoComponents extends Component {
 
 					<div className="row">
 						<div className="left-col">
-							{renderHTML(SingleDropdownListMarkup)}
+							<div className="code-div">
+								{renderHTML(SingleDropdownListMarkup)}
+							</div>
 						</div>
 						<div className="right-col">
 							<img src="https://i.imgur.com/kquzzEU.png" />
@@ -106,7 +110,9 @@ export default class DemoComponents extends Component {
 
 					<div className="row">
 						<div className="left-col">
-							{renderHTML(DataSearchMarkup)}
+							<div className="code-div">
+								{renderHTML(DataSearchMarkup)}
+							</div>
 						</div>
 						<div className="right-col">
 							<img className="big" src="https://i.imgur.com/AxAJkte.png" />
@@ -116,11 +122,13 @@ export default class DemoComponents extends Component {
 
 					<div className="row">
 						<div className="left-col">
-							{renderHTML(ResultListMarkup)}
+							<div className="code-div">
+								{renderHTML(ResultListMarkup)}
+							</div>
 						</div>
 						<div className="right-col">
-							<img className="big" src="https://i.imgur.com/l0wLoZ4.png" />
-							<p><strong>ResultList</strong> allows us the search matches in a list format, it supports pagination, infinite scrolling as well as sorting options. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/ReactiveList.html" target="_blank">here</a>.</p>
+							<img className="big" src="https://i.imgur.com/YA2JbnN.png" />
+							<p><strong>ResultList</strong> allows us to render the search matches in a list format and comes with built-in support for pagination, infinite scrolling as well as sorting options. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/ReactiveList.html" target="_blank">here</a>.</p>
 						</div>
 					</div>
 				</div>

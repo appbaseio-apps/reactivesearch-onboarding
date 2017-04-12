@@ -779,18 +779,29 @@ table.highlight {
 		margin: 40px 0 80px;
 	}
 
-	.left-col, .right-col {
-		width: 48%;
+	.left-col {
+		width: 38%;
+		.code-div {
+			pre {
+				white-space: pre-wrap;
+				white-space: -moz-pre-wrap;
+				white-space: -pre-wrap;
+				white-space: -o-pre-wrap;
+				word-wrap: break-word;
+				padding:0px;
+				margin:0px
+			}
+		}
 	}
-
 	.right-col {
+		width: 58%;
 		text-align: center;
 
 		p {
 			padding: 6px 12px;
 			font-size: 14px;
 			line-height: 24px;
-			text-align: justify;
+			text-align: left;
 			max-width: 300px;
 			margin: 0 auto;
 		}
@@ -892,4 +903,3 @@ table.highlight {
 		}
 	}
 }
-
