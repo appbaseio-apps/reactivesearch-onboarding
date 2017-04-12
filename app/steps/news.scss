@@ -137,13 +137,16 @@ nav {
 			display: none;
 		}
 
+		.rbc-resultlist-item__details {
+			width: 100%;
+		}
+
 		.rbc-resultlist-item__title,
 		.rbc-resultlist-item__desc {
 			padding: 0;
 			width: 100%;
 			white-space: normal;
 		}
-
 
 		.rbc-resultlist-item__title .title {
 			margin: 0 0 10px 0;
