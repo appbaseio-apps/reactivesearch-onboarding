@@ -52,7 +52,7 @@ export default class SampleDataContainer extends Component {
 			<section className="single-step">
 				<h2>Sample Dataset for Hacker News</h2>
 				<p>
-					We have prepared a small sample of Hacker News dataset to be inserted into the app. Hit the <strong>Next</strong> button to index this data.
+					We have prepared a Hacker News dataset of 650 records to index into the app. Hit the <strong>Next</strong> button to start indexing.
 				</p>
 				<table className="highlight responsive-table">
 					<thead>

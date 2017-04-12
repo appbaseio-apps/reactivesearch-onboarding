@@ -78,7 +78,7 @@ export default class DemoComponents extends Component {
 	render() {
 		return (
 			<section className="single-step">
-				<h2>Get started with our data-aware components</h2>
+				<h2>Let us assemble all the components</h2>
 
 				<div className="docs-wrapper">
 					<div className="row">
@@ -86,7 +86,7 @@ export default class DemoComponents extends Component {
 							<Remarkable source={base}></Remarkable>
 						</div>
 						<div className="right-col">
-							<p>ReactiveBase is the base component for all ReactiveMaps and ReactiveSearch apps. It binds the backend app (data source) with the UI view components (child elements to ReactiveBase), allowing the UI views to be reactively updated every time there is a change in the data source or in the UI view components.</p>
+							<p>ReactiveBase is the first component in any ReactiveSearch (or Maps) app, it connects the UI layer with the appbase.io data backend.</p>
 						</div>
 					</div>
 
@@ -96,7 +96,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img src="https://i.imgur.com/kquzzEU.png" />
-							<p>A SingleDropdownList sensor component creates a radio select list UI widget. It is used for filtering results based on the current selection from a list of items.</p>
+							<p><strong>SingleDropdownList</strong> is a dropdown UI component. We will use this to create a search filter by stories, comments, etc. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/SingleDropdownList.html" target="_blank">here</a>.</p>
 						</div>
 					</div>
 
@@ -106,7 +106,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img className="big" src="https://i.imgur.com/AxAJkte.png" />
-							<p>A DataSearch sensor component creates a searchbox UI widget with an autocomplete and keyword highlighting functionality. It is used for applying full-text search across one or more fields.</p>
+							<p><strong>DataSearch</strong> is a searchbox UI component that can search on one or more fields, and comes with optional auto-complete suggestions and result highlighting support. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/DataSearch.html" target="_blank">here</a>.</p>
 						</div>
 					</div>
 
@@ -116,7 +116,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img className="big" src="https://i.imgur.com/l0wLoZ4.png" />
-							<p>A ResultList is an actuator component that creates a result list UI widget where results from all the applied filters are shown.</p>
+							<p><strong>ResultList</strong> allows us the search matches in a list format, it supports pagination, infinite scrolling as well as sorting options. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/ReactiveList.html" target="_blank">here</a>.</p>
 						</div>
 					</div>
 				</div>
