@@ -73,7 +73,7 @@ export default class DemoComponents extends Component {
 							<Remarkable source={base}></Remarkable>
 						</div>
 						<div className="right-col">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus qui laboriosam repellat, illo molestias nihil necessitatibus, delectus dolor accusantium ea.</p>
+							<p>ReactiveBase is the base component for all ReactiveMaps and ReactiveSearch apps. It binds the backend app (data source) with the UI view components (child elements to ReactiveBase), allowing the UI views to be reactively updated every time there is a change in the data source or in the UI view components.</p>
 						</div>
 					</div>
 
@@ -83,7 +83,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img src="/assets/images/component-1.png" />
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis laborum velit consequatur beatae, eligendi soluta cupiditate, quam nihil? Aspernatur, totam.</p>
+							<p>A SingleDropdownList sensor component creates a radio select list UI widget. It is used for filtering results based on the current selection from a list of items.</p>
 						</div>
 					</div>
 
@@ -93,7 +93,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img src="/assets/images/component-2.png" />
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis laborum velit consequatur beatae, eligendi soluta cupiditate, quam nihil? Aspernatur, totam.</p>
+							<p>A DataSearch sensor component creates a searchbox UI widget with an autocomplete and keyword highlighting functionality. It is used for applying full-text search across one or more fields.</p>
 						</div>
 					</div>
 				</div>
