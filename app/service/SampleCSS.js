@@ -71,7 +71,7 @@ nav {
 	text-align: center;
 }
 
-.rbc.rbc-resultlist-wrapper {
+.rbc.rbc-resultlist {
 	background-color: transparent;
 	padding: 0;
 	margin: 0;
@@ -89,7 +89,7 @@ nav {
 	height: auto !important;
 }
 
-.rbc-resultlist-scroll-container .rbc-resultlist {
+.rbc-resultlist-scroll-container .rbc-resultlist-item {
 	border-bottom: 1px solid #eaeaea;
 	padding: 15px;
 	cursor: auto;

@@ -24,6 +24,7 @@ const Testing = React.createClass({
 								appbaseField={["title", "text", "by"]}
 								placeholder="Search posts by title, text or author..."
 								autocomplete={false}
+								highlight={true}
 							/>
 						</div>
 

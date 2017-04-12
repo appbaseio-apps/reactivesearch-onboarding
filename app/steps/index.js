@@ -13,7 +13,9 @@ export class Steps extends Component {
 			currentStep: 0,
 			completedStep: -1,
 			slideup: false,
-			slideVisible: false
+			slideVisible: false,
+			showLoader: false,
+			loadingMessage: ""
 		};
 		this.nextStep = this.nextStep.bind(this);
 		this.toggleSlideup = this.toggleSlideup.bind(this);
@@ -27,12 +29,22 @@ export class Steps extends Component {
 						slideup: true,
 						slideVisible: true
 					});
-				}, 4500);
+				}, 10000);
 			}
 		}
 	}
 
+	toggleLoader(message="Loading... Please Wait!") {
+		this.setState({
+			showLoader: !this.state.showLoader,
+			loadingMessage: message
+		});
+	}
+
 	setStep(step) {
+		if (this.state.showLoader) {
+			this.toggleLoader();
+		}
 		if (this.state.completedStep + 1 >= step) {
 			this.setState({
 				currentStep: step
@@ -43,6 +55,9 @@ export class Steps extends Component {
 	}
 
 	nextStep() {
+		if (this.state.showLoader) {
+			this.toggleLoader();
+		}
 		this.setState({
 			currentStep: this.state.currentStep + 1,
 			completedStep: this.state.completedStep + 1
@@ -72,6 +87,7 @@ export class Steps extends Component {
 				step={this.state.currentStep}
 				nextStep={this.nextStep}
 				setStep={this.setStep.bind(this)}
+				toggleLoader={this.toggleLoader.bind(this)}
 				completedStep={this.state.completedStep}>
 			</ServeStep>
 		);
@@ -94,20 +110,15 @@ export class Steps extends Component {
 						<i className="fa fa-chevron-up"></i>
 						<i className="fa fa-chevron-down"></i>
 					</a>
-					<a className="item">
-						<img src="/assets/images/importer.svg" alt="Importer"/>
-						<h2>Import custom datasets</h2>
-						<p>Importer allows you to import custom datasets from .csv or .json files.</p>
+					<a target="_blank" href="https://dashboard.appbase.io/reactivesearch" className="item">
+						<img src="/assets/images/dashboard.png" alt="Dashboard"/>
+						<h2>Visit Dashboard</h2>
+						<p>Create more apps or edit existing ones instantly</p>
 					</a>
-					<a className="item">
-						<img src="/assets/images/importer.svg" alt="Importer"/>
-						<h2>Import custom datasets</h2>
-						<p>Importer allows you to import custom datasets from .csv or .json files.</p>
-					</a>
-					<a className="item">
-						<img src="/assets/images/importer.svg" alt="Importer"/>
-						<h2>Import custom datasets</h2>
-						<p>Importer allows you to import custom datasets from .csv or .json files.</p>
+					<a target="_blank" href="https://opensource.appbase.io/reactive-manual/" className="item">
+						<img src="/assets/images/docs.png" alt="Docs"/>
+						<h2>Read Docs</h2>
+						<p>Neatly organised documentation with code examples</p>
 					</a>
 				</div>
 			);
@@ -165,13 +176,26 @@ export class Steps extends Component {
 		return element;
 	}
 
+	renderLoader() {
+		if (this.state.showLoader) {
+			return (
+				<div className="overlay-loader">
+					<div className="loading loading--double"></div>
+					<p>{this.state.loadingMessage}</p>
+				</div>
+			);
+		}
+		return null;
+	}
+
 	render() {
 		return (
 			<div>
+				{this.renderLoader()}
 				<div className="onboarding-left">
 					<div className="tex-left img-container reactive-logo">
 						<a href="https://opensource.appbase.io/reactivesearch/">
-							<img src="assets/images/logo.png" alt="Reactive Maps" className="img-responsive" />
+							<img src="assets/images/searchicon.svg" alt="Reactive Maps" className="img-responsive" />
 						</a>
 					</div>
 					<ul className="step-widget">

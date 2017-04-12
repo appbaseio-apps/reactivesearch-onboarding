@@ -19,6 +19,7 @@ export default class SampleDataContainer extends Component {
 	}
 
 	submit() {
+		this.props.toggleLoader("Indexing data. Please Wait!");
 		dataOperation.updateMapping("post", mapping)
 		.then((res) => {
 			this.props.nextStep();

@@ -65,6 +65,7 @@ export class LiveExample extends Component {
 								appbaseField={["title", "text", "by"]}
 								placeholder="Search posts by title, text or author..."
 								autocomplete={false}
+								highlight={true}
 							/>
 						</div>
 

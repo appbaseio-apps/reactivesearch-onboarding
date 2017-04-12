@@ -34,6 +34,7 @@ const DataSearch = `
 
 export default class DemoComponents extends Component {
 	submit() {
+		this.props.toggleLoader("Assembling data and components for your app. Hold tight!");
 		dataOperation.indexData(data)
 		.on('data', (res) => {
 			this.props.nextStep();
