@@ -31,9 +31,9 @@ export default class SampleDataContainer extends Component {
 
 	submitBtn() {
 		let btn;
-		if (this.props.completedStep >= 2) {
+		if (this.props.completedStep >= 1) {
 			btn = (
-				<button className="btn btn-primary pos-static submit-btn" onClick={() => this.props.setStep(3)}>
+				<button className="btn btn-primary pos-static submit-btn" onClick={() => this.props.setStep(2)}>
 					Next
 				</button>
 			);

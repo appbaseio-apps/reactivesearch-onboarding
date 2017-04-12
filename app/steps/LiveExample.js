@@ -89,7 +89,7 @@ export class LiveExample extends Component {
 								appbaseField="title"
 								from={0}
 								size={20}
-								showPagination={true}
+								pagination={true}
 								onData={this.onData}
 								react={{
 									and: ["InputSensor", "TypeSensor"]

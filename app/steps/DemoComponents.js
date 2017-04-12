@@ -37,7 +37,7 @@ const ResultList = `
 		appbaseField="title"
 		from={0}
 		size={20}
-		showPagination={true}
+		pagination={true}
 		onData={this.onData}
 		react={{
 			and: ["InputSensor", "TypeSensor"]
@@ -61,7 +61,7 @@ export default class DemoComponents extends Component {
 		let btn;
 		if (this.props.completedStep >= 2) {
 			btn = (
-				<button className="btn btn-primary pos-static submit-btn" onClick={() => this.props.setStep(4)}>
+				<button className="btn btn-primary pos-static submit-btn" onClick={() => this.props.setStep(3)}>
 					Next
 				</button>
 			);

@@ -48,7 +48,7 @@ const Testing = React.createClass({
 								appbaseField="title"
 								from={0}
 								size={50}
-								showPagination={true}
+								pagination={true}
 								react={{
 									and: ["InputSensor", "TypeSensor"]
 								}}
