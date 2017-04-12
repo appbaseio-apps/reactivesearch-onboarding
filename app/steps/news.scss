@@ -133,19 +133,9 @@ nav {
 		padding: 15px;
 		cursor: auto;
 
-		.rbc-resultlist-item__image {
-			display: none;
-		}
-
-		.rbc-resultlist-item__details {
-			width: 100%;
-		}
-
 		.rbc-resultlist-item__title,
 		.rbc-resultlist-item__desc {
 			padding: 0;
-			width: 100%;
-			white-space: normal;
 		}
 
 		.rbc-resultlist-item__title .title {
