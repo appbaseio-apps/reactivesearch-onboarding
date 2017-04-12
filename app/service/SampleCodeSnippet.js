@@ -32,7 +32,7 @@ const Testing = React.createClass({
 							<SingleDropdownList
 								componentId="TypeSensor"
 								appbaseField="p_type.raw"
-								size={100}
+								size={20}
 								selectAllLabel="All"
 								defaultSelected="All"
 								react={{

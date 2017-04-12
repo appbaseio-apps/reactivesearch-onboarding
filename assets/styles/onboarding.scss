@@ -283,7 +283,7 @@ body {
 		height: 100%;
 		position: fixed;
 		top: 0;
-		background-color: $grey-font;
+		background-color: $secondary-color;
 		left: 400px;
 		margin: 0;
 
@@ -296,27 +296,27 @@ body {
 					cursor: pointer;
 					font-family: 'Source Sans Pro';
 					font-weight: 700;
-					background-color: $secondary-color;
+					background-color: $yellow;
 					margin-right: 12px;
 					border: 0;
 					border-radius: 4px;
 					color: $grey-font;
 					padding: 9px 24px;
 					letter-spacing: 0.04em;
-					border-bottom: 2px solid #fafafa;
+					border-bottom: 2px solid darken($yellow, 15%);
 					-webkit-transition: all .3s ease;
 					transition: all .3s ease;
 
 					&:hover {
-						background-color: #fcfcfc;
-						color: #888;
+						background-color: darken($yellow,20%);;
+						color: #fff;
 					}
 				}
 
 				&.active a {
-					color: #666;
-					background-color: #fff;
-					border-color: #eee;
+					color: #fff;
+					background-color: $primary-font-color;
+					border-color: darken($primary-font-color, 15%);
 				}
 			}
 		}

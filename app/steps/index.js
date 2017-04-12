@@ -111,12 +111,12 @@ export class Steps extends Component {
 						<i className="fa fa-chevron-down"></i>
 					</a>
 					<a target="_blank" href="https://dashboard.appbase.io/reactivesearch" className="item">
-						<img src="/assets/images/dashboard.png" alt="Dashboard"/>
+						<img src="https://i.imgur.com/WLmVtEN.png" alt="Dashboard"/>
 						<h2>Visit Dashboard</h2>
 						<p>Create more apps or edit existing ones instantly</p>
 					</a>
 					<a target="_blank" href="https://opensource.appbase.io/reactive-manual/" className="item">
-						<img src="/assets/images/docs.png" alt="Docs"/>
+						<img src="https://i.imgur.com/pHHtAMg.png" alt="Docs"/>
 						<h2>Read Docs</h2>
 						<p>Neatly organised documentation with code examples</p>
 					</a>
