@@ -22,7 +22,7 @@ export class LiveExample extends Component {
 				res.p_type == "poll" ?
 				<a  className="title"
 					target="_blank"
-					href={`https://news.ycombinator.com/item?id=${res.id}`}
+					href={"https://news.ycombinator.com/item?id="+res.id}
 					dangerouslySetInnerHTML={{__html: res.title}}
 				/> :
 				<div className="title" dangerouslySetInnerHTML={{__html: res.title}} />
@@ -35,11 +35,11 @@ export class LiveExample extends Component {
 				<p className="info">
 					{
 						res.p_type == "comment" ?
-						<span>parent <a target="_blank" href={`https://news.ycombinator.com/item?id=${res.parent}`}>{res.parent}</a><span className="separator">|</span></span>
+						<span>parent <a target="_blank" href={"https://news.ycombinator.com/item?id="+res.parent}>{res.parent}</a><span className="separator">|</span></span>
 						: null
 					}
 					{res.score} points<span className="separator">|</span>
-					<a target="_blank" href={`https://news.ycombinator.com/user?id=${res.by}`}>{res.by}</a><span className="separator">|</span>
+					<a target="_blank" href={"https://news.ycombinator.com/user?id="+res.by}>{res.by}</a><span className="separator">|</span>
 					{moment.unix(res.time).fromNow()}
 				</p>
 			</div>)
@@ -50,8 +50,8 @@ export class LiveExample extends Component {
 		return (
 			<div>
 				<ReactiveBase
-					app="hn"
-					credentials="YOzeIAmyn:f1955c6b-03e7-4eb8-90ca-bfcc28a0ba0c"
+					app={dataOperation.app.appName}
+					credentials={`${dataOperation.app.username}:${dataOperation.app.password}`}
 					type="post"
 					theme="rbc-orange"
 				>
@@ -76,9 +76,6 @@ export class LiveExample extends Component {
 								size={20}
 								selectAllLabel="All"
 								defaultSelected="All"
-								react={{
-									and: ["InputSensor"]
-								}}
 							/>
 						</div>
 					</div>

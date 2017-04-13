@@ -151,18 +151,10 @@ export class Steps extends Component {
 										</tr>
 										<tr>
 											<th>
-												username:
+												credentials:
 											</th>
 											<td>
-												{dataOperation.app.username}
-											</td>
-										</tr>
-										<tr>
-											<th>
-												password:
-											</th>
-											<td>
-												{dataOperation.app.password}
+												{dataOperation.app.username}:{dataOperation.app.password}
 											</td>
 										</tr>
 									</tbody>

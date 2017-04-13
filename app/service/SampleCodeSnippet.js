@@ -35,9 +35,6 @@ const Testing = React.createClass({
 								size={20}
 								selectAllLabel="All"
 								defaultSelected="All"
-								react={{
-									and: ["InputSensor"]
-								}}
 							/>
 						</div>
 					</div>
@@ -49,6 +46,7 @@ const Testing = React.createClass({
 								from={0}
 								size={50}
 								pagination={true}
+								onData={onData}
 								react={{
 									and: ["InputSensor", "TypeSensor"]
 								}}
@@ -61,6 +59,40 @@ const Testing = React.createClass({
 		)
 	}
 });
+
+const onData = (res) => {
+	const title = res.title && res.title.length ?
+			res.url ?
+				<a  className="title"
+					target="_blank"
+					href={res.url}
+					dangerouslySetInnerHTML={{__html: res.title}}
+				/> :
+				res.p_type == "poll" ?
+				<a  className="title"
+					target="_blank"
+					href={"https://news.ycombinator.com/item?id="+res.id}
+					dangerouslySetInnerHTML={{__html: res.title}}
+				/> :
+				<div className="title" dangerouslySetInnerHTML={{__html: res.title}} />
+			: null;
+		return {
+			image: null,
+			title: title,
+			desc: (<div>
+				{ res.text ? <div className="text" dangerouslySetInnerHTML={{__html: res.text}} /> : null }
+				<p className="info">
+					{
+						res.p_type == "comment" ?
+						<span>parent <a target="_blank" href={"https://news.ycombinator.com/item?id="+res.parent}>{res.parent}</a><span className="separator">|</span></span>
+						: null
+					}
+					{res.score} points<span className="separator">|</span>
+					<a target="_blank" href={"https://news.ycombinator.com/user?id="+res.by}>{res.by}</a><span className="separator">|</span>
+				</p>
+			</div>)
+		}
+}
 
 ReactDOM.render(
 	<Testing></Testing>,
