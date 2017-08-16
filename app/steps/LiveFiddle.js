@@ -3,7 +3,7 @@ import { dataOperation } from "../service/DataOperation";
 import { SampleCSS } from "../service/SampleCSS";
 import { JsonView } from "../others/JsonView";
 import { Tabs, Tab } from "react-bootstrap";
-import {LiveExample} from "./LiveExample";
+import { LiveExample } from "./LiveExample";
 
 export class LiveFiddle extends Component {
 	constructor(props) {
@@ -28,7 +28,7 @@ export class LiveFiddle extends Component {
 			js_pre_processor      : "babel",
 			head                  : "<meta name='viewport' content='width=device-width'>",
 			css_external          : "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css;https://cdn.rawgit.com/appbaseio/reactivesearch/0.4.3/dist/css/style.min.css",
-			js_external           : "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js;https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js;https://cdn.rawgit.com/appbaseio/reactivesearch/master/umd/ReactiveSearch.js"
+			js_external           : "https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js;https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js;https://cdn.rawgit.com/appbaseio/reactivesearch/master/umd/reactivesearch.js"
 
 		};
 		return JSON.stringify(config);
@@ -89,7 +89,7 @@ export class LiveFiddle extends Component {
 					</Tab>
 				</Tabs>
 				<div className="extra-btns">
-					<form action="http://codepen.io/pen/define" method="POST" target="_blank">
+					<form action="https://codepen.io/pen/define" method="POST" target="_blank">
 						<input type="hidden" name="data" value={this.codepenConfig()} />
 						<button type="submit" className="subscribe"><i className="fa fa-external-link"></i> Codepen</button>
 					</form>

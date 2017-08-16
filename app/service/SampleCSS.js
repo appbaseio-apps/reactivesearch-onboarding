@@ -97,6 +97,10 @@ nav {
   text-align: center;
 }
 
+.rbc.rbc-pagination li {
+	height: 32px;
+}
+
 .rbc.rbc-resultlist {
   background-color: transparent;
   padding: 0;
@@ -189,5 +193,11 @@ nav {
 .rbc-resultlist-scroll-container .rbc-resultlist-item p {
   margin: 0;
   line-height: 24px;
+}
+
+.rbc-orange .rbc.rbc-datasearch .rbc-search-container input, .rbc-orange .rbc.rbc-datasearch input {
+  color: #777;
+  background-color: transparent;
+  border-bottom: 0;
 }
 `;

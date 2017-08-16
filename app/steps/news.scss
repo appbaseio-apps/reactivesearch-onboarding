@@ -109,6 +109,10 @@ nav {
 	border: 0;
 	box-shadow: none;
 	text-align: center;
+
+	li {
+		height: 32px;
+	}
 }
 
 .rbc.rbc-resultlist {
@@ -202,4 +206,10 @@ nav {
 			line-height: 24px;
 		}
 	}
+}
+
+.rbc-orange .rbc.rbc-datasearch .rbc-search-container input, .rbc-orange .rbc.rbc-datasearch input {
+  color: #777;
+  background-color: transparent;
+  border-bottom: 0;
 }
