@@ -17,7 +17,7 @@ const ReactivebaseMarkup = `
 const SingleDropdownListMarkup = `
 <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>SingleDropdownList</span>
 <span style='color:#274796; '>&#xa0;</span><span style='color:#274796; '>   componentId</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"TypeSensor"</span><span style='color:#274796; '></span>
-<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;appbaseField</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"p_type"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;dataField</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"p_type"</span><span style='color:#274796; '></span>
 <span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#074726; '>size</span><span style='color:#808030; '>=</span><span style='color:#274796; '>{</span><span style='color:#008c00; '>100</span><span style='color:#274796; '>}</span>
 <span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;selectAllLabel</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"All"</span><span style='color:#274796; '></span>
 <span style='color:#274796; '>&#xa0;&#xa0;&#xa0;&#xa0;defaultSelected</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"All"</span><span style='color:#274796; '></span>
@@ -28,7 +28,7 @@ const SingleDropdownListMarkup = `
 const DataSearchMarkup = `
 <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>DataSearch</span>
 <span style='color:#274796; '>	</span><span style='color:#5f5035; '>componentId</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"InputSensor"</span><span style='color:#274796; '></span>
-<span style='color:#274796; '>	appbaseField</span><span style='color:#808030; '>=</span><span style='color:#274796; '>{[</span><span style='color:#0000e6; '>"title"</span><span style='color:#274796; '>, </span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '>, </span><span style='color:#0000e6; '>"by"</span><span style='color:#274796; '>]}</span>
+<span style='color:#274796; '>	dataField</span><span style='color:#808030; '>=</span><span style='color:#274796; '>{[</span><span style='color:#0000e6; '>"title"</span><span style='color:#274796; '>, </span><span style='color:#0000e6; '>"text"</span><span style='color:#274796; '>, </span><span style='color:#0000e6; '>"by"</span><span style='color:#274796; '>]}</span>
 <span style='color:#274796; '>	</span><span style='color:#074726; '>placeholder</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"Search posts by title, text or author..."</span><span style='color:#274796; '></span>
 <span style='color:#274796; '>	</span><span style='color:#074726; '>autocomplete</span><span style='color:#808030; '>=</span><span style='color:#274796; '>{false}</span>
 <span style='color:#a65700; '>/></span>
@@ -37,7 +37,7 @@ const DataSearchMarkup = `
 
 const ResultListMarkup = `
 <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#5f5035; '>ResultList</span>
-<span style='color:#274796; '>	</span><span style='color:#5f5035; '>appbaseField</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"title"</span><span style='color:#274796; '></span>
+<span style='color:#274796; '>	</span><span style='color:#5f5035; '>dataField</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"title"</span><span style='color:#274796; '></span>
 <span style='color:#274796; '>	from</span><span style='color:#808030; '>=</span><span style='color:#274796; '>{</span><span style='color:#008c00; '>0</span><span style='color:#274796; '>}</span>
 <span style='color:#274796; '>	</span><span style='color:#074726; '>size</span><span style='color:#808030; '>=</span><span style='color:#274796; '>{</span><span style='color:#008c00; '>20</span><span style='color:#274796; '>}</span>
 <span style='color:#274796; '>	pagination</span><span style='color:#808030; '>=</span><span style='color:#274796; '>{true}</span>
