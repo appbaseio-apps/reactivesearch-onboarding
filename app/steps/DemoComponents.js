@@ -104,7 +104,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img src="https://i.imgur.com/kquzzEU.png" />
-							<p><strong>SingleDropdownList</strong> is a dropdown UI component. We will use this to create a search filter by stories, comments, etc. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/SingleDropdownList.html" target="_blank">here</a>.</p>
+							<p><strong>SingleDropdownList</strong> is a dropdown UI component. We will use this to create a search filter by stories, comments, etc. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/basic-components/singledropdownlist.html" target="_blank">here</a>.</p>
 						</div>
 					</div>
 
@@ -116,7 +116,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img className="big" src="https://i.imgur.com/AxAJkte.png" />
-							<p><strong>DataSearch</strong> is a searchbox UI component that can search on one or more fields, and comes with optional auto-complete suggestions and result highlighting support. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/DataSearch.html" target="_blank">here</a>.</p>
+							<p><strong>DataSearch</strong> is a searchbox UI component that can search on one or more fields, and comes with optional auto-complete suggestions and result highlighting support. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/basic-components/datasearch.html" target="_blank">here</a>.</p>
 						</div>
 					</div>
 
@@ -128,7 +128,7 @@ export default class DemoComponents extends Component {
 						</div>
 						<div className="right-col">
 							<img className="big" src="https://i.imgur.com/YA2JbnN.png" />
-							<p><strong>ResultList</strong> allows us to render the search matches in a list format and comes with built-in support for pagination, infinite scrolling as well as sorting options. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/v1.0.0/components/ReactiveList.html" target="_blank">here</a>.</p>
+							<p><strong>ResultList</strong> allows us to render the search matches in a list format and comes with built-in support for pagination, infinite scrolling as well as sorting options. You can read more about it in the docs <a href="https://opensource.appbase.io/reactive-manual/basic-components/reactivelist.html" target="_blank">here</a>.</p>
 						</div>
 					</div>
 				</div>
