@@ -73,7 +73,7 @@ class DataOperation {
 		this.app.type = type;
 		return $.ajax({
 			type: "POST",
-			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_mapping/' + type + '?ignore_conflicts=true&update_all_types=true',
+			url: 'https://scalr.api.appbase.io/' + this.app.appName + '/_mapping/' + type + '?update_all_types=true',
 			dataType: 'json',
 			contentType: "application/json",
 			headers: {
